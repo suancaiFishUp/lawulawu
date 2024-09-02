@@ -40,11 +40,9 @@ public class PersonController {
     @Autowired
     private  ResultGenerator resultGenerator;
 
-    @Value("${file.target_folder}")
-    private static String TARGET_FOLDER;
+    private static final String TARGET_FOLDER = "/home/web/lawulawu/picture/";
 
-    @Value("${file.url}")
-    private static String URL;
+    private static final String URL = "http://65.49.194.52:8090/";
 
 
     @PostMapping("insertPerson")

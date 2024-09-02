@@ -2,7 +2,7 @@ import axios from 'axios';
   
 // 创建 axios 实例  
 const http = axios.create({  
-  baseURL: 'http://localhost:8081',  
+  baseURL: 'http://65.49.194.52:8081',  
   // 其他配置...  
 });  
   

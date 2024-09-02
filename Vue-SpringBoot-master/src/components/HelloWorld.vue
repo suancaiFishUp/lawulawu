@@ -145,12 +145,19 @@ export default {
         return;
       }
 
+      // 检查文件大小 (例如：限制为5MB)
+      const maxSize = 5 * 1024 * 1024; // 5MB
+      if (this.imageFile.size > maxSize) {
+        alert('文件过大，最大允许5MB');
+        return;
+      }
+
       const formData = new FormData();
       formData.append('file', this.imageFile);
       formData.append('description', this.imageDescription);
 
       try {
-        await http.post('/person/upload', formData, {
+        const response = await http.post('/person/upload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -163,6 +170,7 @@ export default {
         this.fetchImages();
       } catch (error) {
         console.error('上传图片失败:', error);
+        alert('上传图片失败，请重试。'); // 提供用户反馈
       }
     },
 

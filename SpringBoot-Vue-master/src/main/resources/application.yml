@@ -2,10 +2,10 @@ server:
   port: 8081
 spring:
     datasource:
-        url: jdbc:mysql://127.0.0.1:3306/lawulawu
-        username: root
-        password: 214915
-        driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/suancaiyu?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&serverTimezone=GMT%2B8
+      username: suancaiyu
+      password: ikzE!2Qimc
+      driver-class-name: com.mysql.cj.jdbc.Driver
     mvc:
         view:
           prefix: /WEB-INF/views
@@ -17,7 +17,3 @@ logging:
   level:
     com.suancaiyu: debug # 或者使用trace来获取更详细的日志
     org.springframework: info
-
-file:
-  target_folder: F:/code/lawulawu/picture/
-  url: http://localhost:8090/
