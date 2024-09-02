@@ -230,16 +230,16 @@ export default {
 
 .upload-button-top {
   padding: 8px 16px;
-  background-color: #28a745;
+  background-color: #007bff;
+  border-radius: 50px;
   color: white;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
 }
 
 .upload-button-top:hover {
-  background-color: #218838;
+  background-color: #0056b3;
 }
 
 /* Search Bar Styles */
@@ -263,7 +263,7 @@ export default {
 
 .search-input {
   flex: 1;
-  padding: 10px 15px;
+  padding: 15px 13px;
   border: none;
   border-radius: 50px;
   font-size: 16px;
@@ -341,7 +341,7 @@ export default {
   padding: 30px;
   border-radius: 8px;
   z-index: 1001;
-  width: 100%;
+  width: 70%;
   max-width: 400px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -361,7 +361,7 @@ export default {
 
 .file-input,
 .input-text {
-  width: 100%;
+  width: 90%;
   padding: 10px 15px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
@@ -373,7 +373,7 @@ export default {
 .upload-button {
   width: 100%;
   padding: 10px 0;
-  background-color: #28a745;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50px;
@@ -382,6 +382,6 @@ export default {
 }
 
 .upload-button:hover {
-  background-color: #218838;
+  background-color: #0056b3;
 }
 </style>
