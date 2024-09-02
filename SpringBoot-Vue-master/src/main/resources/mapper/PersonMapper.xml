@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suancaiyu.mapper.PersonMapper">
+
+    <select id="checkLogin" resultType="com.suancaiyu.entity.Person" >
+        select id,username,password,address
+           from  person where username =#{username}
+           and password = #{password}
+    </select>
+
+    <insert id="insertPerson">
+        insert into person(username,password,address) values (#{username},#{password},#{address})
+    </insert>
+</mapper>

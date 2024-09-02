@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suancaiyu.mapper.PictureMapper">
+
+    <select id="selectByNote" resultType="com.suancaiyu.entity.Picture" >
+        select *
+        from  picture
+        where note like CONCAT('%', #{note}, '%') and person_id = #{personId}
+        limit #{start},#{end}
+    </select>
+
+    <select id="select" resultType="com.suancaiyu.entity.Picture" >
+        select *
+        from  picture
+        where person_id = #{personId}
+        limit #{start},#{end}
+    </select>
+</mapper>
