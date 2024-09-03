@@ -25,12 +25,20 @@
     <div class="image-container">
       <div class="image-column" v-for="(column, index) in imageColumns" :key="index">
         <div v-for="image in column" :key="image.id" class="image-item">
-          <img :src="image.url" :alt="image.name" />
+          <img :src="image.url" :alt="image.name" @click="enlargeImage(image)" />
         </div>
       </div>
     </div>
 
     <div v-if="loading" class="loading">加载中...</div>
+
+    <!-- Image Enlarging Modal -->
+    <div v-if="enlargedImage" class="image-modal" @click="enlargedImage = null">
+      <div class="modal-content">
+        <img :src="enlargedImage.url" alt="Enlarged Image" />
+        <div class="image-note">{{ enlargedImage.note }}</div> <!-- Display image note here -->
+      </div>
+    </div>
 
     <!-- Upload Image Dialog -->
     <div v-if="showUpload" class="upload-dialog">
@@ -48,6 +56,7 @@
     <div class="infinite-scroll-target"></div>
   </div>
 </template>
+
 
 <script>
 import http from '@/http/http.js';
@@ -67,6 +76,7 @@ export default {
       showUpload: false,
       username: '',
       observer: null,
+      enlargedImage: null,
     };
   },
   methods: {
@@ -189,6 +199,10 @@ export default {
 
     handleResize() {
       this.fetchImages();
+    },
+
+    enlargeImage(image) {
+      this.enlargedImage = image;
     },
   },
 
@@ -383,5 +397,41 @@ export default {
 
 .upload-button:hover {
   background-color: #0056b3;
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+  cursor: zoom-out;
+  padding: 20px; /* Add padding to allow some space around the image */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 70%;
+  max-height: 100vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.image-note {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #fff;
 }
 </style>
