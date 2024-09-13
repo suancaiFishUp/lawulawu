@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/70e03d4a-579d-402a-a2ed-0400761166cd)基于SpringBoot和Vue的前后端分离项目，实现线上存储图片功能。
+基于SpringBoot和Vue的前后端分离项目，实现线上存储图片功能。
 
 登录地址：http://65.49.194.52:8080/#/
 首页地址：http://65.49.194.52:8080/#/HelloWorld
